@@ -13,7 +13,7 @@ using namespace std;
 // returns true if input character q is puctuation, else false
 bool ispunctuation(char q) {
     // complete the functions here ...
-    string puctuations = "~!@#$%^&*()_+{}|:\"<>?`-=[]\\;',./";
+    string puctuations = "~!@#$%^&*()_+{}|:\"< >?`-=[]\\;',./";
     for (int i=0;i<puctuations.size();i++){
         if (q == puctuations[i])
             return true;
