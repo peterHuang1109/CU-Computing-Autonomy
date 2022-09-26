@@ -22,6 +22,9 @@ struct Student {
 
 void printStudents(vector<Student> students) {
     // complete the functions here ...
+    for (int i; i<students.size(); i++){
+        cout << students[i].firstName << " " << students[i].lastName << ", " << students[i].studentID << ", " << students[i].GPA << endl;
+    }
 };
 
 vector<Student> addStudent(vector<Student> students) {
@@ -38,21 +41,30 @@ vector<Student> addStudent(vector<Student> students) {
     cin >> newStudent.GPA;
 
     // complete the functions here ...
-
+    students.push_back(newStudent);
     return students;
 }
 
 vector<Student> delStudent(vector<Student> students) {
     int studentIDtoDel;
+    int studentIdx = -1;
     cout << "ID of student to delete: ";
     cin >> studentIDtoDel;
 
     cout << "ID to delete: " << studentIDtoDel << endl;
 
-    vector<Student> newStudents;
+    //vector<Student> newStudents;
     // complete the functions here ...
-
-    return newStudents;
+    for (int i=0; i<students.size();i++){
+        if (students[i].studentID == studentIDtoDel)
+            studentIdx = i;
+    }
+    if (studentIdx == -1)
+        return students;
+    else
+        students.erase(students.begin()+studentIdx);
+        
+    return students;
 }
 
 int main() {
